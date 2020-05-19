@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body>
+    <!-- <div>
+  
+    <div>
+       
+        <div>title</div>
+       
+        <div>date</div>
+       
+        <div>_content</div>
+       
+        <div>source</div>
+       
+        <div>raw</div>
+       
+        <div>slug</div>
+       
+        <div>published</div>
+       
+        <div>updated</div>
+       
+        <div>comments</div>
+       
+        <div>layout</div>
+       
+        <div>photos</div>
+       
+        <div>link</div>
+       
+        <div>_id</div>
+       
+        <div>content</div>
+       
+        <div>site</div>
+       
+        <div>excerpt</div>
+       
+        <div>more</div>
+       
+        <div>path</div>
+       
+        <div>permalink</div>
+       
+        <div>full_source</div>
+       
+        <div>asset_dir</div>
+       
+        <div>tags</div>
+       
+        <div>categories</div>
+       
+        <div>prev</div>
+       
+        <div>__post</div>
+       
+        <div>lang</div>
+       
+        <div>canonical_path</div>
+       
+        <div>_model</div>
+       
+        <div>_schema</div>
+       
+        <div>setTags</div>
+       
+        <div>setCategories</div>
+      
+    </div>
+  
+</div> -->
+    <header class="header">
+      <div class="navbar">
+        <div class="content">
+          <a class="brand" href="/">OUYC</a>
+          <nav class="nav">
+            
+            <a class="nav-item" href="/">
+              首页</a>
+            
+            <a class="nav-item" href="/archives">
+              归档</a>
+            
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="content">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="toc" class="toc">
+        <div class="toc-title">目录</div>
+        <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#基础"><span class="toc-list-text">基础</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#优先级"><span class="toc-list-text">优先级</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#非贪婪模式"><span class="toc-list-text">非贪婪模式</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#分组"><span class="toc-list-text">分组</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#多选结构"><span class="toc-list-text">多选结构</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#捕获分组"><span class="toc-list-text">捕获分组</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#非捕获分组"><span class="toc-list-text">非捕获分组</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#命名分组"><span class="toc-list-text">命名分组</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#环视"><span class="toc-list-text">环视</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#组合环视"><span class="toc-list-text">组合环视</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#模式"><span class="toc-list-text">模式</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#元字符"><span class="toc-list-text">元字符</span></a></li></ol>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="post">
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li><code>^</code>在表达式开始位置则匹配字符串开始位置</li>
+<li><code>$</code>在表达式结束位置则匹配字符串结束位置</li>
+<li><code>[]</code>方括号内指定<strong>匹配字符</strong>，<code>[^]</code>不匹配方括号内的字符</li>
+<li><code>()</code>圆括号内指定一个<strong>子表达式</strong>分组，在子表达式后可以引用</li>
+<li><code>{}</code>花括号指定字符、字符组、子表达式匹配次数</li>
+<li><code>|</code>在连个匹配组中选择一个</li>
+<li><code>\</code>转义表达式字符</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><table>
+<thead>
+<tr>
+<th>表达式字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\</code></td>
+<td>转义符</td>
+</tr>
+<tr>
+<td><code>()</code>、<code>[]</code></td>
+<td>分组和字符组</td>
+</tr>
+<tr>
+<td><code>{}</code></td>
+<td>限定符</td>
+</tr>
+<tr>
+<td><code>^</code>、<code>$</code>、<code>\元字符</code>、<code>任意字符</code></td>
+<td>定位点或字符</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+</tr>
+</tbody></table>
+<h3 id="非贪婪模式"><a href="#非贪婪模式" class="headerlink" title="非贪婪模式"></a>非贪婪模式</h3><p>在限定符后紧跟一个<code>?</code>表示匹配模式为非贪婪模式。</p>
+<h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><h4 id="多选结构"><a href="#多选结构" class="headerlink" title="多选结构"></a>多选结构</h4><p><code>(expression|expression)</code></p>
+<h4 id="捕获分组"><a href="#捕获分组" class="headerlink" title="捕获分组"></a>捕获分组</h4><p><code>()</code>匹配到文本后会保存起来，在通过<code>\num</code>在之后的表达式中<strong>引用</strong>num中的文本。num表示括号对应的编号，从1开始计数</p>
+<blockquote>
+<p>分组的编号根据开括号出现顺序来计数的，捕获分组不能动态变化</p>
+</blockquote>
+<h4 id="非捕获分组"><a href="#非捕获分组" class="headerlink" title="非捕获分组"></a>非捕获分组</h4><p><code>(?expression)</code>不可以通过<code>\num</code>引用</p>
+<h4 id="命名分组"><a href="#命名分组" class="headerlink" title="命名分组"></a>命名分组</h4><p><code>(?&lt;name&gt;expression)</code></p>
+<h3 id="环视"><a href="#环视" class="headerlink" title="环视"></a>环视</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>表达式</th>
+<th>判断方向</th>
+<th>匹配成功的返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>顺序肯定环视</td>
+<td><code>(?=expression)</code></td>
+<td>向右</td>
+<td>true</td>
+</tr>
+<tr>
+<td>顺序否定环视</td>
+<td><code>(?!expression)</code></td>
+<td>向右</td>
+<td>false</td>
+</tr>
+<tr>
+<td>逆序肯定环视</td>
+<td><code>(?&lt;=expression)</code></td>
+<td>向左</td>
+<td>true</td>
+</tr>
+<tr>
+<td>逆序否定环视</td>
+<td><code>(?&lt;!expression)</code></td>
+<td>向左</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h4 id="组合环视"><a href="#组合环视" class="headerlink" title="组合环视"></a>组合环视</h4><ul>
+<li>包含组合：<code>(?=expression(?!expression))</code></li>
+<li>并列组合：<code>(?=expression)(?!expression)</code></li>
+<li>多选组合：<code>((?=expression)|(?!expression))</code></li>
+</ul>
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><p><code>(?mx)</code>注释模式</p>
+<hr>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+<th>等于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>零次或多次</td>
+<td><code>{0,}</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>一次或多次</td>
+<td><code>{1,}</code></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>零次或一次</td>
+<td><code>{0,1}</code></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配一个单词边界</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配一个非单词边界</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>匹配一个数字字符</td>
+<td><code>[0-9]</code></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>匹配一个非数次字符</td>
+<td><code>[^0-9]</code></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>匹配任何空白字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>匹配任何非空白字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>匹配字母、数字、下划线</td>
+<td><code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>匹配非字母、数字、下划线</td>
+<td><code>[^a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td><code>\cx</code></td>
+<td>匹配一个由x指定的控制字符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>匹配一个换页符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>匹配一个换行符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>匹配一个回车符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>匹配一个制表符</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>匹配一个垂直制表符</td>
+<td></td>
+</tr>
+</tbody></table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </main>
+    <footer id="footer" class="footer">
+      <div class="content">
+        <div style="margin-left: 2rem;">
+          Powered by <a href="https://hexo.io/" target="_blank" rel="noopener" title="Hexo">Hexo</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
