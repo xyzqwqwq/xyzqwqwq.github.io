@@ -587,6 +587,18 @@
     padding: 1.5rem 2.5rem;
   }
 }
+.posts .post-item a:link {
+  color: #000;
+}
+.posts .post-item a:visited {
+  color: #000;
+}
+.posts .post-item a:hover {
+  color: #3f3f3f;
+}
+.posts .post-item a:active {
+  color: #3f3f3f;
+}
 .posts .post-item .title {
   font-size: 1.5rem;
   margin-top: 0;
@@ -631,8 +643,9 @@
 }
 .toc {
   padding-top: 2rem;
+  margin-right: 2rem;
   position: sticky;
-  top: 4rem;
+  top: 1rem;
 }
 .toc .toc-list {
   padding: 0;
@@ -640,11 +653,17 @@
 .toc .toc-list .toc-list-item {
   list-style: none;
 }
-.post {
+.post-warp {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
 }
-.post > table {
+.post-warp .post {
+  padding: 0.5rem;
+  background-color: #fffafa;
+  border: 1px solid #c0c0c0;
+  border-radius: 1rem;
+}
+.post-warp .post > table {
   margin: 1rem 0;
   width: 100%;
   text-align: justify;
@@ -653,25 +672,79 @@
   border-collapse: collapse;
   border: 1px solid #bbb;
 }
-.post > table thead th {
+.post-warp .post > table thead th {
   padding: 0.25rem;
   border: 1px solid #bbb;
 }
-.post > table tbody td {
+.post-warp .post > table tbody td {
   padding: 0.25rem;
   border: 1px solid #bbb;
 }
-.post figure {
+.post-warp .post figure {
   overflow-x: scroll;
   border: 1px solid #bbb;
 }
-.post figure > table {
+.post-warp .post figure > table {
   width: 100%;
   border-collapse: collapse;
 }
-.post figure > table tbody td {
+.post-warp .post figure > table tbody td {
   padding: 0.25rem;
   border: 1px solid #bbb;
+}
+.archives {
+  margin: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .archives {
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .archives {
+    margin-left: 6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .archives {
+    margin-left: 8rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .archives {
+    margin-left: 10rem;
+  }
+}
+.archives .archive {
+  border-left: 2px solid #afafaf;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.archives .archive .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  position: absolute;
+  left: -5px;
+}
+.archives .archive .year {
+  font-size: 2.25rem;
+  margin: 3rem 0rem 3rem 2rem;
+}
+.archives .archive .month {
+  font-size: 1.75rem;
+  padding-left: 1rem;
+  margin: 1.5rem 0rem 1.5rem 2.5rem;
+}
+.archives .archive .day {
+  padding-left: 1rem;
+  margin: 1rem 0rem 1rem 4rem;
+}
+.archives .archive .archive-post {
+  font-size: 1rem;
+  margin-left: 1rem;
 }
 * {
   box-sizing: border-box;
@@ -682,30 +755,6 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-}
-@media screen and (min-width: 768px) {
-  html,
-  body {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 992px) {
-  html,
-  body {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  html,
-  body {
-    font-size: 20px;
-  }
-}
-@media screen and (min-width: 1920px) {
-  html,
-  body {
-    font-size: 20px;
-  }
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
@@ -727,14 +776,19 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .content {
     width: 85%;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .content {
     width: 75%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content {
+    width: 65%;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -742,7 +796,7 @@ a {
     width: 55%;
   }
 }
-.header {
+.header-sticky {
   position: sticky;
   top: 0;
 }
@@ -760,4 +814,7 @@ a {
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.footer a {
+  color: #a0a0a0;
 }
