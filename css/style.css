@@ -655,10 +655,10 @@
 }
 .post-warp {
   width: 100%;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
 }
 .post-warp .post {
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   background-color: #fffafa;
   border: 1px solid #c0c0c0;
   border-radius: 1rem;
@@ -745,6 +745,20 @@
 .archives .archive .archive-post {
   font-size: 1rem;
   margin-left: 1rem;
+}
+.category {
+  padding: 2rem;
+}
+.category .title {
+  text-align: center;
+  font-size: 2rem;
+}
+.tag {
+  padding: 2rem;
+}
+.tag .title {
+  text-align: center;
+  font-size: 2rem;
 }
 * {
   box-sizing: border-box;
