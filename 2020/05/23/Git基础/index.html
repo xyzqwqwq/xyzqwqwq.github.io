@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+  />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?26bbf1b05a8a6fbc88b32f5025f45f22";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body>
+    <header class="header">
+      <div class="navbar">
+        <div class="content">
+          <a class="brand" href="/">OUYC</a>
+          <nav class="nav">
+            
+            <a class="nav-item" href="/">
+              首页</a>
+            
+            <a class="nav-item" href="/archives">
+              归档</a>
+            
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="content">
+        <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="toc" class="toc">
+        <div class="toc-title">目录</div>
+        <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#重要概念"><span class="toc-list-text">重要概念</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#常用命令"><span class="toc-list-text">常用命令</span></a></li></ol>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="post">
+        <p>git是一个开源的文件版本控制工具</p>
+<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><ul>
+<li>暂存区(stage)</li>
+<li>工作区</li>
+<li>版本库</li>
+</ul>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title:communication</span><br><span class="line"></span><br><span class="line">participant main</span><br><span class="line">participant FuncA as A</span><br><span class="line">participant FuncB as B</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">git status # 查看状态</span><br><span class="line">git add * # 将文件的修改添加至暂存区</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提交</span></span><br><span class="line">git commit -m ""  # 提交暂存区</span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 撤销</span></span><br><span class="line">git reset fileName # 撤销暂存文件</span><br><span class="line">git checkout -- fileName  #撤销修改的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git log  # 显示提交日志</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 远程仓库</span></span><br><span class="line">git remote -v  # 查看远程仓库</span><br><span class="line">git remote show origin # 查看远程仓库信息信息</span><br><span class="line">git remote rename oldName newName # 重命名远程仓库别名</span><br><span class="line">git remote rm name # 删除远程仓库</span><br><span class="line">git remote add name uri # 添加地址为uri名称为name的远程仓库</span><br><span class="line">git fetch [name] # 从name中获取数据</span><br><span class="line">git push origin master # 向远程仓库主分支提交本地主分支</span><br><span class="line">git push origin --tags # 向远程仓库提交所有标签</span><br><span class="line">git push origin tagName # 向远程仓库提交指定标签</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 标签</span></span><br><span class="line">git tag  # 查看标签</span><br><span class="line">git tag tagName # 创建轻量级标签</span><br><span class="line">git tag -a tagName -m 'tag content' # 创建附注标签</span><br><span class="line">git tag -a tagName 9fceb02 # 为指定提交创建标签</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 分支</span></span><br><span class="line">git branch  # 显示分支</span><br><span class="line">git branch -v # 显示分支的最新提交</span><br><span class="line">git branch --merged # 显示已合并分支</span><br><span class="line">git branch --no-merged # 显示未合并分支</span><br><span class="line"></span><br><span class="line">git branch branchName  # 创建分支</span><br><span class="line">git branch -d branchName  # 删除分支</span><br><span class="line">git checkout branchName # 切换到branchName分支</span><br><span class="line">git checkout -b branchName # 创建并切换到branchName分支</span><br><span class="line"></span><br><span class="line">git merge branchName # 将branchName合并到当前分支</span><br><span class="line">git mergetool  # 使用图像界面合并分支</span><br><span class="line"></span><br><span class="line">git rebase # 变基</span><br></pre></td></tr></table></figure>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </main>
+    <footer id="footer" class="footer">
+      <div class="content">
+        <div style="margin-left: 2rem;">
+          Powered by <a href="https://hexo.io/" target="_blank" rel="noopener" title="Hexo">Hexo</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

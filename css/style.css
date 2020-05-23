@@ -663,11 +663,11 @@
 }
 .post figure {
   overflow-x: scroll;
+  border: 1px solid #bbb;
 }
 .post figure > table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #bbb;
 }
 .post figure > table tbody td {
   padding: 0.25rem;
@@ -682,6 +682,30 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+}
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 992px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  html,
+  body {
+    font-size: 20px;
+  }
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
